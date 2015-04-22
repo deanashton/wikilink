@@ -21,7 +21,7 @@
 "
 " Usage
 " -----
-" Hit the ENTER key when the cursor is on a wiki link
+" Hit gl when the cursor is on a wiki link
 " The corresponding file is loaded in the current buffer
 " Hit Shift + ENTER to go back
 "
@@ -40,7 +40,7 @@ endfunction
 
 "Initialize variables
 call s:initVariable("g:wikilinkAutosplit", "on")
-call s:initVariable("g:wikilinkOnEnter", "on")
+call s:initVariable("g:wikilinkJump", "on")
 
 call s:initVariable("s:footer", "_Footer")
 call s:initVariable("s:sidebar", "_Sidebar")
@@ -173,7 +173,7 @@ endfunction
 command! WikiLinkGotoLink call WikiLinkGotoLink()
 nnoremap <script> <Plug>WikiLinkGotoLink :WikiLinkGotoLink<CR>
 if !hasmapto('<Plug>WikiLinkGotoLink')
-  nmap <silent> <CR> <Plug>WikiLinkGotoLink
+  nmap <silent> gl <Plug>WikiLinkGotoLink
 endif
 "Shift+Return to return to the previous buffer 
 nmap <S-CR> :b#<CR>
